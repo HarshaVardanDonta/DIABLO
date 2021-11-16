@@ -1,0 +1,413 @@
+<html>
+    <head><title>YouTube</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+        <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+        <style> 
+            body{
+                color: white;
+                font-family: 'Roboto', sans-serif;
+                font-size: 15px;
+                background-color: rgb(22, 22, 22);
+            }
+            
+            .topleft{
+                padding-top: 10px;
+                padding-left: 10px;
+                padding-bottom: 0px;
+                float: left;
+                position:fixed;
+                top: 0;
+                left: 0px;
+                height: 50px;
+                width: 230px;
+                background-color: rgb(36, 36, 36);
+            }
+            .topleft img{
+                cursor: pointer;
+            }
+            .topnav{     
+                overflow: scroll;           
+                position:fixed;
+                background-color: rgb(36, 36, 36);
+                top: 0;
+                z-index: 1;
+                left: 238px;
+                width: 100%;
+                height: 50px;
+            }
+            .topnav div{
+                padding-top: 10px;
+                margin-right: 10px;
+                margin-left: 10px;
+                float: left;
+            }
+            .topnav div i{
+                float:right;
+                font-size: 28;
+                cursor: pointer;
+            }
+            .topnav div i:hover{
+                color: grey;
+            }
+            .topnav div form {
+                margin-right: 340px;
+            }
+            .topnav div form i{
+                padding-left: 10px;
+                padding-bottom: 0px;
+                background-color: rgb(56, 56, 56);
+                font-size: 31px;
+                margin: auto;
+                float:right;
+            }
+            .topnav2{      
+                transition-duration: 1s;
+                overflow: auto;
+                white-space: nowrap;
+                border-top: 1px solid rgb(92, 92, 92);          
+                border-bottom: 1px solid rgb(92, 92, 92);
+                position:fixed;
+                float: left;
+                background-color: rgb(36, 36, 36);
+                top: 50px;
+                padding-top: 15px;
+                z-index: 1;
+                left: 238px;
+                width: 100%;
+                height: 45px;
+            }
+            .topnav2 button{
+                padding: 10px 25px;
+                border-style: none;
+                border-radius: 25px;
+                text-align: center;
+                background-color: rgb(87, 87, 87);
+                color: rgb(255, 255, 255);
+                cursor: pointer;
+                font-weight: bold;
+            }
+            .topnav2 button:hover{
+                background-color: rgb(184, 184, 184);
+                color: rgb(0, 0, 0);
+            }
+            .topnav input[type=text]{
+                color: white;
+                padding: 6px;
+                margin-top: 8px;
+                font-size: 17px;
+                background-color: rgb(41, 41, 41);
+                border: none;
+            }
+            
+            .topnav button{
+                background-color: rgb(41, 41, 41);
+                border: none;
+                padding: 6px 10px;
+                cursor: pointer;
+            }
+            .topnav button:hover{
+                background-color: rgb(48, 48, 48);
+            }
+            .sidenav{
+                overflow: scroll;
+                float:left;
+                position: fixed;
+                top: 60px;
+                left: 0px;
+                height: 100%;
+                width: 240px;
+                z-index: 1;
+                background-color: rgb(36, 36, 36);
+                transition-duration: 1s;
+            }
+            .sidenav i{
+                padding-bottom: 10px;
+                padding-right: 10px;
+                float: left;
+                font-size: 20px;
+            }
+            .sidenav hr.new{
+                width: 90%;
+                border: 1px solid rgb(92, 92, 92);
+            }
+            .sidenav div{
+                padding-top: 10px;
+                padding-bottom: 10px;
+                padding-left: 10px;
+                cursor: pointer;
+            }
+            .sidenav div:hover{
+                background-color: rgb(112, 112, 112);
+            }
+            .main{
+                transition-duration: 1s;
+                font-weight: bold;
+                padding-top: 121px;
+                padding-left: 260px;
+                height: auto;
+                width: auto;
+                letter-spacing: 0;
+            }
+            .main div{
+                float: left;
+            }
+            .main i{
+                padding-bottom: 20px;
+                padding-right: 20px;
+                float: left;
+                font-size: 50px;
+            }
+            .main a{
+                font-size: 10px;
+                color: grey ;
+            }
+            .main a:hover{
+                color: white;
+            }
+            .main div{
+                /*text-align-last: center;*/
+                padding-left: 5px;
+                padding-bottom: 50px;
+                padding-right: 5px;
+                color: white;
+                width: 300px;
+                height: 250px;
+                /*background-color: white;*/
+            }
+            .main div img{
+                padding-bottom: 10px;
+            }
+            i{
+                padding-right: 10px;
+                float: left;
+                font-size: 20px;
+            }
+            form{
+                margin: auto;
+                width: 60%;
+            }
+            
+            /* width */
+            ::-webkit-scrollbar {
+                width: 5px;
+                height: 5px;
+            }
+
+            /* Track */
+            ::-webkit-scrollbar-track {
+                border-radius: 15px;
+            }
+            
+            /* Handle */
+            ::-webkit-scrollbar-thumb {
+                background: rgb(168, 168, 168); 
+                border-radius: 10px;
+            }
+
+            /* Handle on hover */
+            ::-webkit-scrollbar-thumb:hover {
+                background: #ffffff; 
+            }
+        </style>
+
+    </head>
+    <body>
+        <div class="topleft">
+            <img height="25px" width="auto" src="menu.png" onclick="unShrink()">
+
+            <img height="25px" width="auto" src="logo.png" onclick="shrink()">
+        </div>
+        <div class="topnav">
+               <div>
+                   <form style="width: auto;padding-left: 250px;">
+                       <input style="height: 70%;width: 400px;background-color: rgb(29, 29, 29);color: white;border-style: none;
+                       border: 1px solid rgb(54, 54, 54);" 
+                       type="search" placeholder="Search..">
+                       <i class='bx bx-search-alt-2' style='color:#ffffff' ></i>
+                   </form>
+               </div>
+               <div>
+                <i class='bx bxl-tiktok'  ></i>
+               </div>
+               <div>
+                <i class='bx bxs-video-recording'  ></i>
+               </div>
+               <div>
+                <i class='bx bxs-bell'  ></i>
+               </div>
+               <div>
+                <i class='bx bxs-ghost'></i>
+               </div>
+        </div>
+        <div id="t2" class="topnav2">
+            <button>All</button>&nbsp;&nbsp;&nbsp;<button>Music</button>&nbsp;&nbsp;&nbsp;<button>Ava Max</button>&nbsp;&nbsp;&nbsp;<button>Music</button>
+            &nbsp;&nbsp;&nbsp;<button>Comedy</button>&nbsp;&nbsp;&nbsp;<button>FTF</button>&nbsp;&nbsp;&nbsp; <button>All</button>&nbsp;&nbsp;&nbsp;<button>Music</button>&nbsp;&nbsp;&nbsp;<button>Ava Max</button>&nbsp;&nbsp;&nbsp;<button>Music</button>
+            &nbsp;&nbsp;&nbsp;<button>Comedy</button>&nbsp;&nbsp;&nbsp;<button>FTF</button>&nbsp;&nbsp;&nbsp; <button>All</button>&nbsp;&nbsp;&nbsp;<button>Music</button>&nbsp;&nbsp;&nbsp;<button>Ava Max</button>&nbsp;&nbsp;&nbsp;<button>Music</button>
+            &nbsp;&nbsp;&nbsp;<button>Comedy</button>&nbsp;&nbsp;&nbsp;<button>FTF</button>&nbsp;&nbsp;&nbsp;<button>All</button>&nbsp;&nbsp;&nbsp;<button>Music</button>&nbsp;&nbsp;&nbsp;<button>Ava Max</button>&nbsp;&nbsp;&nbsp;<button>Music</button>
+            &nbsp;&nbsp;&nbsp;<button>Comedy</button>&nbsp;&nbsp;&nbsp;<button>FTF</button> &nbsp;&nbsp;&nbsp;<button>All</button>&nbsp;&nbsp;&nbsp;<button>Music</button>&nbsp;&nbsp;&nbsp;<button>Ava Max</button>&nbsp;&nbsp;&nbsp;<button>Music</button>
+            &nbsp;&nbsp;&nbsp;<button>Comedy</button>&nbsp;&nbsp;&nbsp;<button>FTF</button>&nbsp;&nbsp;&nbsp; <button>All</button>&nbsp;&nbsp;&nbsp;<button>Music</button>&nbsp;&nbsp;&nbsp;<button>Ava Max</button>&nbsp;&nbsp;&nbsp;<button>Music</button>
+            &nbsp;&nbsp;&nbsp;<button>Comedy</button>&nbsp;&nbsp;&nbsp;<button>FTF</button>
+        </div>
+        <div id="side" class="sidenav">
+            <div>
+                <i class='bx bxs-home'></i>   &nbsp;&nbsp; Home
+            </div>
+            <div>
+                <i class='bx bx-compass'></i> &nbsp;&nbsp; Explore
+            </div>
+            <div>
+                <i class='bx bxs-videos'></i> &nbsp;&nbsp; Subscriptions
+            </div>
+            <hr class="new">
+            <div>
+                <i class='bx bx-library' ></i> &nbsp;&nbsp; Library
+            </div>
+            <div>
+                <i class='bx bx-history' ></i> &nbsp;&nbsp; History
+            </div>
+            <div>
+                <i class='bx bx-video' ></i> &nbsp;&nbsp; Your videos
+            </div>
+            <div>
+                <i class='bx bx-time-five' ></i> &nbsp;&nbsp; Watch later
+            </div>
+            <hr class="new">
+            <div>
+                <i class='bx bxs-home'></i>   &nbsp;&nbsp; Home
+            </div>
+            <div>
+                <i class='bx bx-compass'></i> &nbsp;&nbsp; Explore
+            </div>
+            <div>
+                <i class='bx bxs-videos'></i> &nbsp;&nbsp; Subscriptions
+            </div>
+            <hr class="new">
+            <div>
+                <i class='bx bx-library' ></i> &nbsp;&nbsp; Library
+            </div>
+            <div>
+                <i class='bx bx-history' ></i> &nbsp;&nbsp; History
+            </div>
+            <div>
+                <i class='bx bx-video' ></i> &nbsp;&nbsp; Your videos
+            </div>
+            <div>
+                <i class='bx bx-time-five' ></i> &nbsp;&nbsp; Watch later
+            </div>
+            <hr class="new">
+            <div>
+                <i class='bx bxs-home'></i>   &nbsp;&nbsp; Home
+            </div>
+            <div>
+                <i class='bx bx-compass'></i> &nbsp;&nbsp; Explore
+            </div>
+            <div>
+                <i class='bx bxs-videos'></i> &nbsp;&nbsp; Subscriptions
+            </div>
+            <hr class="new">
+            <div>
+                <i class='bx bx-library' ></i> &nbsp;&nbsp; Library
+            </div>
+            <div>
+                <i class='bx bx-history' ></i> &nbsp;&nbsp; History
+            </div>
+            <div>
+                <i class='bx bx-video' ></i> &nbsp;&nbsp; Your videos
+            </div>
+            <div>
+                <i class='bx bx-time-five' ></i> &nbsp;&nbsp; Watch later
+            </div>
+            <hr class="new">
+            
+            
+        </div>
+        <div id="m" class="main">
+            <div>
+                <img width="100%" height="70%" src="t.jpg">
+                <i class='bx bxl-discord-alt' style='color:#ffffff' ></i>
+                NOT JOJO<br><br>
+                <a href="https://www.youtube.com/">JOJO channel<br>3.3M views</a><br>
+            </div>
+            <div>
+                <img width="100%" height="70%" src="awesome.jpg">
+                <i class='bx bxl-flutter' style='color:#ffffff' ></i></i>
+                QUOTE<br><br>
+                <a href="https://www.youtube.com/">JOJO channel<br>3.3M views</a><br>
+            </div>
+            <div>
+                <img width="100%" height="70%" src="962244.png">
+                <i class='bx bx-store-alt' style='color:#ffffff' ></i></i>
+                OVERLORD<br><br>
+                <a href="https://www.youtube.com/">JOJO channel<br>3.3M views</a><br>
+            </div>
+            <div>
+                <img width="100%" height="70%" src="840761.png">
+                <i class='bx bx-ghost' style='color:#ffffff' ></i></i>
+                JOJO<br><br>
+                <a href="https://www.youtube.com/">JOJO channel<br>3.3M views</a><br>
+            </div>
+            <div>
+                <img width="100%" height="70%" src="433571.jpg">
+                <i class='bx bxl-discord-alt' style='color:#ffffff' ></i>
+                JOJO<br><br>
+                <a href="https://www.youtube.com/">JOJO channel<br>3.3M views</a><br>
+            </div>
+            <div>
+                <img width="100%" height="70%" src="934062.jpg">
+                <i class='bx bxl-flutter' style='color:#ffffff' ></i></i>
+                JOJO<br><br>
+                <a href="https://www.youtube.com/">JOJO channel<br>3.3M views</a><br>
+            </div>
+            <div>
+                <img width="100%" height="70%" src="1124788.jpg">
+                <i class='bx bx-store-alt' style='color:#ffffff' ></i></i>
+                JOJO<br><br>
+                <a href="https://www.youtube.com/">JOJO channel<br>3.3M views</a><br>
+            </div>
+            <div>
+                <img width="100%" height="70%" src="1126012.jpg">
+                <i class='bx bx-ghost' style='color:#ffffff' ></i></i>
+                JOJO<br><br>
+                <a href="https://www.youtube.com/">JOJO channel<br>3.3M views</a><br>
+            </div>
+            <div>
+                <img width="100%" height="70%" src="t.jpg">
+                <i class='bx bxl-discord-alt' style='color:#ffffff' ></i>
+                JOJO<br><br>
+                <a href="https://www.youtube.com/">JOJO channel<br>3.3M views</a><br>
+            </div>
+            <div>
+                <img width="100%" height="70%" src="awesome.jpg">
+                <i class='bx bxl-flutter' style='color:#ffffff' ></i></i>
+                JOJO<br><br>
+                <a href="https://www.youtube.com/">JOJO channel<br>3.3M views</a><br>
+            </div>
+            <div>
+                <img width="100%" height="70%" src="962244.png">
+                <i class='bx bx-store-alt' style='color:#ffffff' ></i></i>
+                JOJO<br><br>
+                <a href="https://www.youtube.com/">JOJO channel<br>3.3M views</a><br>
+            </div>
+            <div>
+                <img width="100%" height="70%" src="840761.png">
+                <i class='bx bx-ghost' style='color:#ffffff' ></i></i>
+                JOJO<br><br>
+                <a href="https://www.youtube.com/">JOJO channel<br>3.3M views</a><br>
+            </div>
+        </div>
+        <script>
+            function shrink(){
+                document.getElementById("side").style.width="80px";
+                document.getElementById("m").style.paddingLeft="90px";
+                document.getElementById("t2").style.left="80px";
+            }
+            function unShrink(){
+                document.getElementById("side").style.width="240px";
+                document.getElementById("m").style.paddingLeft="260px";
+                document.getElementById("t2").style.left="238px";
+            }
+        </script>
+    </body>
+</html>

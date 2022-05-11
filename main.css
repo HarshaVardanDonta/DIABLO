@@ -1,0 +1,135 @@
+body{
+    background-color: #1c1c1c;
+    background-image: "noBackground.png";
+    background-size: 50vh;
+
+    
+    background-repeat: no-repeat;
+    
+    background-position-x:center;
+    background-attachment: fixed;
+    background-position-y: bottom;
+    
+  }
+  a{
+      margin-left: 15%;
+    background-color: #383838;
+    border-radius: 10vh;
+    color: #EC994B;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Acme', sans-serif;
+    font-size:2.5rem;
+  }
+  
+  p{
+      color: #EC994B;
+      text-align: center;
+      font-family: 'Acme', sans-serif;
+      font-size: 50;
+  }
+
+  @keyframes shake{
+    0%{
+        
+        letter-spacing: 0vh;
+      transform: translateY(0)
+    }
+    25%{
+        
+      transform: translateY(5px);
+    }
+      
+    50%{
+        letter-spacing: 0.08vh;
+      transform: translateY(-5px);
+    }
+    100%{
+      transform: translateY(0px);
+    }
+  }
+
+  p:hover{
+      animation: shake 0.3s;
+  }
+
+  .parallax {
+    background-image: url("008.jpg");
+    border-style:solid;
+    border-radius: 5vh;
+  
+   
+    height:fit-content; 
+  
+    
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 1s;
+  }
+  
+  .parallax2 {
+    background-image: url("008.jpg");
+    border-style:solid;
+    border-radius: 5vh;
+    overflow: auto;
+    white-space: nowrap;
+  
+    /* Full height */
+    height:fit-content; 
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 1s;
+  }
+  .parallax2 img{
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px;
+      vertical-align: middle;
+      margin: 10px;
+      width: 20%;
+  }
+
+  .parallax2 p{
+      word-wrap: break-word;
+      margin: 20px;
+      
+      text-align: center;
+      font-size: 2.5rem;
+  }
+  
+  
+
+  div.scrollmenu {
+    overflow: auto;
+    white-space: nowrap;
+  }
+  /* width */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+
+  }
